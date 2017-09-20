@@ -3,6 +3,7 @@ package danielp;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping ("/hello")
 public class HelloWorldController {
 
     @RequestMapping(value = "/hello/world", method = RequestMethod.GET)
