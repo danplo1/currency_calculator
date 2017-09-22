@@ -1,8 +1,8 @@
-package danielp;
+package com.danielp;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import service.HelloWorldService;
+import com.service.HelloWorldService;
 
 @RestController
 @RequestMapping("/hello")

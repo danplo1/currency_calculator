@@ -1,18 +1,15 @@
-package danielp;
+package com.danielp;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
-import service.impl.CalculationService;
+import com.service.impl.CalculationService;
 
 import javax.annotation.PostConstruct;
-import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.logging.Logger;
-
-import static org.springframework.boot.Banner.Mode.LOG;
 
 @RestController
 @RequestMapping("/calculations")

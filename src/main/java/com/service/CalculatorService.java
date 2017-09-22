@@ -1,13 +1,12 @@
-package service.impl;
+package com.service;
+
 
 import org.springframework.stereotype.Service;
 
 import java.math.BigInteger;
 
-
 @Service
-public interface CalculationService {
-
+public interface CalculatorService {
     BigInteger factorial(Long n);
 
 }

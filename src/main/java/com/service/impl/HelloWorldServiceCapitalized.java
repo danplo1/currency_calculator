@@ -1,7 +1,9 @@
-package service.impl;
+package com.service.impl;
 
-import service.HelloWorldService;
+import com.service.HelloWorldService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class HelloWorldServiceCapitalized implements HelloWorldService {
 
 public String hello(){
