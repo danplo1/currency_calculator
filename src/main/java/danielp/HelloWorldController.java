@@ -1,24 +1,32 @@
 package danielp;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import service.HelloWorldService;
 
 @RestController
-@RequestMapping ("/hello")
+@RequestMapping("/hello")
 public class HelloWorldController {
 
-    @RequestMapping(value = "/hello/world", method = RequestMethod.GET)
+    @Autowired
+//    @Qualifier(value = "cap")
+    private HelloWorldService helloWorldService;
+
+    @RequestMapping(value = "/world", method = RequestMethod.GET)
     public String helloWorld() {
-        return "Hello World!";
+        return helloWorldService.hello();
     }
 
-    @RequestMapping(value = "/hello/{name}", method = RequestMethod.GET)
+    @RequestMapping(value = "/{name}", method = RequestMethod.GET)
     public String helloName(@PathVariable(value = "name") String name) {
-        return "Hello" + name;
-    }
-    @RequestMapping(value= "/hello", method = RequestMethod.GET)
-    public String hello (@RequestParam(value = "name") String name){
-        return "Hello" + name;
+        return "Hello " + name;
     }
 
+    @RequestMapping(value = "", method = RequestMethod.GET)
+    public String helloParam(@RequestParam(
+            value = "name",
+            required = false,
+            defaultValue = "anonymous") String name) {
+        return "Hello " + name;
+    }
 }
-
